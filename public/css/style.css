@@ -29,4 +29,11 @@ ul {
 .siteheader {
   text-align: center;
   font-size: large;
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  height: 150px;
+}
+.sitefooter {
+  display: flex;
+  justify-content: space-around;
 }

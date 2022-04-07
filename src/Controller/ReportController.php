@@ -31,4 +31,17 @@ class ReportController extends AbstractController
     {
        return $this->render('report.html.twig');
     }
+
+    /**
+     * @Route("/dev/debug", name="debug")
+     */
+    public function debug(): Response
+    {
+       $data = [
+          'message' => 'Welcome to the lucky number API',
+          'number' => random_int(0,100),
+       ];
+
+       return $this->render('debug.html.twig', $data);
+    }
 }

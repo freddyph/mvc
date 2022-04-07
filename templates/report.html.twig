@@ -4,9 +4,8 @@
 Report
 ======
 
-This is the reports from each kmom.
 {% endapply %}
 
+{{ include('report/kmom01.markdown.twig')|markdown_to_html }}
 
-        {{ include('report/kmom01.markdown.twig')|markdown_to_html }}
-        {% endblock %}
+{% endblock %}

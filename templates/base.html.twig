@@ -16,8 +16,9 @@
         <nav>
         <ul>
         <li><a href="{{ url("home") }}">Home</a></li>
-        <li><a href="{{ url("about") }}">about</a></li>
-        <li><a href="{{ url("report") }}">report</a></li>
+        <li><a href="{{ url("about") }}">About</a></li>
+        <li><a href="{{ url("report") }}">Report</a></li>
+        <li><a href="{{ url("debug") }}">Debug</a></li>
         </ul>
         </nav>
         {% block content %}
@@ -25,7 +26,9 @@
         {% endblock %}
 
         <div class="sitefooter">
-        Site footer with details
+        <div>MVC</div>
+        <div>Andreas W</div>
+        <div>BTH 2022</div>
         </div>
     </body>
 </html>
