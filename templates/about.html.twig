@@ -1,0 +1,17 @@
+{% extends "base.html.twig"%}
+
+{% block title %}About{% endblock %}
+
+
+{% block content %}
+<h1>About</h1>
+
+
+<p class="important">
+Välkommen till denna trevliga sida.
+<img src="img/andreas.jpg" width="300px" alt="aw">
+</p>
+
+<p><a href="{{ absolute_url("img/andreas.jpg") }}">Titta på bilden</a></p>
+
+{% endblock %}

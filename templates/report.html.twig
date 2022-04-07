@@ -1,0 +1,12 @@
+{% extends "base.html.twig"%}
+{% block content %}
+{% apply markdown_to_html %}
+Report
+======
+
+This is the reports from each kmom.
+{% endapply %}
+
+
+        {{ include('report/kmom01.markdown.twig')|markdown_to_html }}
+        {% endblock %}
