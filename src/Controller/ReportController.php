@@ -13,7 +13,7 @@ class ReportController extends AbstractController
      */
     public function home(): Response
     {
-       return $this->render('home.html.twig');
+        return $this->render('home.html.twig');
     }
 
     /**
@@ -21,7 +21,7 @@ class ReportController extends AbstractController
      */
     public function about(): Response
     {
-       return $this->render('about.html.twig');
+        return $this->render('about.html.twig');
     }
 
     /**
@@ -29,7 +29,7 @@ class ReportController extends AbstractController
      */
     public function report(): Response
     {
-       return $this->render('report.html.twig');
+        return $this->render('report.html.twig');
     }
 
     /**
@@ -37,11 +37,11 @@ class ReportController extends AbstractController
      */
     public function debug(): Response
     {
-       $data = [
+        $data = [
           'message' => 'Welcome to the lucky number API',
-          'number' => random_int(0,100),
-       ];
+          'number' => random_int(0, 100),
+        ];
 
-       return $this->render('debug.html.twig', $data);
+        return $this->render('debug.html.twig', $data);
     }
 }
