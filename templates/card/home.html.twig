@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dice{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<p>Draw one card at a time.</p>
+
+<p>Card value = {{ card_value }} and its string representation is {{ card_as_string }}</p>
+
+<p><a href="{{ link_to_draw }}">Draw a card.</a>.</p>
+
+{% endblock %}

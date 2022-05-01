@@ -1,0 +1,30 @@
+{% extends "base.html.twig"%}
+
+{% block title %}Card start{% endblock %}
+
+
+{% block content %}
+<h1>Card start</h1>
+<h1>{{ title }}</h1>
+
+<p>Draw one card at a time.</p>
+
+<p>Card value = {{ deck_value }}and its string representation is</p>
+
+
+<p class="important">
+Här finns en massa trevlig länkar för kmom02.
+
+</p>
+<p>3.Visa samtliga kort sorterat på värde och färg (card/deck)</p>
+<p><a href="{{ url("card-shuffle") }}">Shuffle</a></p>
+<p>4.Visa samtliga kort shufflat (card/deck/shuffle)</p>
+<p><a href="{{ url("card-shuffle") }}">Shuffle</a></p>
+<p>5.Visa ett slumpmässigt tal samt visar antalet kort kvar i kortleken(card/deck/draw)</p>
+<p>6.Skapa en sida card/deck/draw/:number som drar :number kort från kortleken och visar upp dem. Visa även antalet kort som är kvar i kortleken.</p>
+<p></p>
+{% endblock %}
+
+
+
+

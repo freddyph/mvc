@@ -44,4 +44,11 @@ class ReportController extends AbstractController
 
         return $this->render('debug.html.twig', $data);
     }
+    /**
+     * @Route("/card", name="card")
+     */
+    public function card(): Response
+    {
+        return $this->render('card/cardstart.html.twig');
+    }
 }
