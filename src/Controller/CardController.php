@@ -24,7 +24,7 @@ class CardController extends AbstractController
             //'test' => $deck->getAsString(),
             //'card_color' => $card->getColor(),
         ];
-    
+
         return $this->render('card/cardstart.html.twig', $data);
     }
 
@@ -36,10 +36,10 @@ class CardController extends AbstractController
     {
         $deck = new \App\Card\Deck();
         $deck->shuffle();
-        $number_in_deck = $deck->count_card();
+        $number_in_deck = $deck->countCard();
         $drawn = $deck->draw();
-        $number_in_deck2 = $deck->count_card();
-        
+        $number_in_deck2 = $deck->countCard();
+
 
         $data = [
             'title' => 'Card drawn many times',
@@ -49,7 +49,7 @@ class CardController extends AbstractController
         ];
         return $this->render('card/draw.html.twig', $data);
     }
-    
+
     /**
      * @Route("/card/draw/{numDraws}", name="card-drawn")
      */
@@ -64,17 +64,16 @@ class CardController extends AbstractController
             $drawn = $deck->draw();
             $cards .= $drawn->getCard();
         }
-        //$output = array_map(function ($cards) { return $cards->name; }, $drawn);
+        
         $data = [
             'title' => 'Card drawn many times',
             'numDraws' => $numDraws,
             'drawn' => $cards,
-            //'cards' => $cards,
         ];
         return $this->render('card/draw.html.twig', $data);
     }
 
-        /**
+    /**
      * @Route("/card/shuffle", name="card-shuffle")
      */
     public function shuffle(): Response
@@ -87,5 +86,19 @@ class CardController extends AbstractController
             'shuffled' => $deck->getAsString(),
         ];
         return $this->render('card/shuffle.html.twig', $data);
+    }
+
+    /**
+     * @Route("/card/deck2", name="deck2")
+     */
+    public function deck2(): Response
+    {
+        $deck = new \App\Card\DeckWith2Jokers();
+        $data = [
+            'title' => 'Deck with Jokers',
+            'deck_value' => $deck->getAsString(),
+        ];
+
+        return $this->render('card/deck2.html.twig', $data);
     }
 }

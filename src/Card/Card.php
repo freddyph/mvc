@@ -5,9 +5,9 @@ namespace App\Card;
 class Card
 {
     public $value;
-    public $color; 
+    public $color;
 
-    public function __construct($value = "0", $color="")
+    public function __construct($value = "0", $color = "")
     {
         $this->value = $value;
         $this->color = $color;
@@ -34,10 +34,11 @@ class Card
                 $this->value = "Q";
             } elseif ($this->value == "13") {
                 $this->value = "K";
+            } elseif ($this->value == "13") {
+                $this->value = "K";
             }
-            return "♥️{$this->value}"; 
-            
-          } elseif ($this->color == "1") {
+            return "♥️{$this->value}";
+        } elseif ($this->color == "1") {
             if ($this->value == "1") {
                 $this->value = "A";
             } elseif ($this->value == "11") {
@@ -48,7 +49,7 @@ class Card
                 $this->value = "K";
             }
             return "♣{$this->value}";
-          } elseif ($this->color == "2") {
+        } elseif ($this->color == "2") {
             if ($this->value == "1") {
                 $this->value = "A";
             } elseif ($this->value == "11") {
@@ -59,7 +60,7 @@ class Card
                 $this->value = "K";
             }
             return "♦️{$this->value}";
-          } elseif ($this->color == "3") {
+        } elseif ($this->color == "3") {
             if ($this->value == "1") {
                 $this->value = "A";
             } elseif ($this->value == "11") {
@@ -70,7 +71,11 @@ class Card
                 $this->value = "K";
             }
             return "♠{$this->value}";
-          }
-
+        } elseif ($this->color == "4") {
+            if ($this->value == "14") {
+                $this->value = "Jo";
+            }
+            return "🟩{$this->value}";
+        }
     }
 }

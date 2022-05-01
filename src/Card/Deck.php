@@ -9,8 +9,8 @@ class Deck
     public function __construct()
     {
         #Skapa kortlek
-        for ($color = 0; $color < 4; $color ++) {
-            for ($value = 1; $value < 14; $value ++) {
+        for ($color = 0; $color < 4; $color++) {
+            for ($value = 1; $value < 14; $value++) {
                 $card = new \App\Card\Card($value, $color);
                 array_push($this->deck, $card);
             }
@@ -32,7 +32,7 @@ class Deck
         return array_pop($this->deck);
     }
 
-    public function count_card(): int
+    public function countCard(): int
     {
         return strval(count($this->deck));
     }
