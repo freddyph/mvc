@@ -55,20 +55,23 @@ class CardController extends AbstractController
      */
     public function drawn(int $numDraws): Response
     {
-        $card = new \App\Card\Card();
+        $deck = new \App\Card\Deck();
+        $deck->shuffle();
+        $drawn = "";
 
-        $cards = [];
-        for ($i = 1; $i <= $numRolls; $i++) {
-            $card->draw();
-            $drawn[] = $card->getAsString();
+        $cards = "";
+        for ($i = 1; $i <= $numDraws; $i++) {
+            $drawn = $deck->draw();
+            $cards .= $drawn->getCard();
         }
-
+        //$output = array_map(function ($cards) { return $cards->name; }, $drawn);
         $data = [
             'title' => 'Card drawn many times',
             'numDraws' => $numDraws,
-            'drawn' => $drawn,
+            'drawn' => $cards,
+            //'cards' => $cards,
         ];
-        return $this->render('card/roll.html.twig', $data);
+        return $this->render('card/draw.html.twig', $data);
     }
 
         /**
