@@ -27,10 +27,14 @@ class Deck
         shuffle($this->deck);
     }
 
-    public function draw(): int
+    public function draw()
     {
-        $this->value = random_int(1, 14);
-        return $this->value;
+        return array_pop($this->deck);
+    }
+
+    public function count_card(): int
+    {
+        return strval(count($this->deck));
     }
 
     public function getAsString(): string

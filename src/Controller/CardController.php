@@ -28,10 +28,32 @@ class CardController extends AbstractController
         return $this->render('card/cardstart.html.twig', $data);
     }
 
+
     /**
-     * @Route("/card/draw/{numDraws}", name="card-draw")
+     * @Route("/card/draw/", name="card-draw")
      */
-    public function draw(int $numDraws): Response
+    public function draw(): Response
+    {
+        $deck = new \App\Card\Deck();
+        $deck->shuffle();
+        $number_in_deck = $deck->count_card();
+        $drawn = $deck->draw();
+        $number_in_deck2 = $deck->count_card();
+        
+
+        $data = [
+            'title' => 'Card drawn many times',
+            'numDraws' => $number_in_deck,
+            'drawn' => $drawn->getCard(),
+            'test' => $number_in_deck2,
+        ];
+        return $this->render('card/draw.html.twig', $data);
+    }
+    
+    /**
+     * @Route("/card/draw/{numDraws}", name="card-drawn")
+     */
+    public function drawn(int $numDraws): Response
     {
         $card = new \App\Card\Card();
 
